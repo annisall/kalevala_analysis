@@ -34,7 +34,7 @@ def combine_and_tokenize(poem):
 and how many words there are in a poem.
 Input: (name, list of lines in a poem)
 output: (name, number of lines, number of words)"""
-def count_metrics(poems):
+def calculate_metrics(poems):
     return list(map(lambda poem: (poem[0], len(poem[1]), len(combine_and_tokenize(poem[1]))), poems))
 
 """ Find all files under specified folder and read them 
@@ -86,23 +86,31 @@ def print_poems(poems):
     for poem in poems:
         print('Name: {0}, poem: {1}'.format(poem[0], poem[1]))
 
+def pretty_print_metrics(metrics):
+    print('Metrics:')
+    for poem in metrics:
+        print('Name: {0}, number of lines: {1}, number of words: {2}'.format(poem[0], poem[1], poem[2]))
+
 def map_with_function(function_name, iterable_object):
     return map(lambda poem: (poem[0], function_name(poem[1])), iterable_object)
 
 if __name__ == '__main__':
     poems_list = read_files('data')
-    print(poems_list[0])
-    metrics = count_metrics(poems_list)
+    metrics = calculate_metrics(poems_list)
+
+    pretty_print_metrics(metrics)
+
     cleaned_poems = list(map_with_function(remove_punctuations, poems_list))
 
     poem_lists = combine_and_tokenize_all_poems(cleaned_poems)
-    print(poem_lists[0])
 
     freqs = word_frequency(poem_lists)
+    print('Word counts:')
+    pprint.pprint(freqs)
 
     frequent_items = dict(map_with_function(filter_rare_items, freqs))
 
     indeces=dict(map_indeces_to_poems(poem_lists, frequent_items))
 
-    #print(indeces['1.txt'])
-    #print(avg_dists_across_poems(indeces)['1.txt'])
+    print('Average waiting times')
+    pprint.pprint(avg_dists_across_poems(indeces))
