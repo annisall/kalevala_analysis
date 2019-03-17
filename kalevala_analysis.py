@@ -98,19 +98,19 @@ if __name__ == '__main__':
     poems_list = read_files('data')
     metrics = calculate_metrics(poems_list)
 
-    pretty_print_metrics(metrics)
+    #pretty_print_metrics(metrics)
 
     cleaned_poems = list(map_with_function(remove_punctuations, poems_list))
 
     poem_lists = combine_and_tokenize_all_poems(cleaned_poems)
 
     freqs = word_frequency(poem_lists)
-    print('Word counts:')
-    pprint.pprint(freqs)
+    #print('Word counts:')
+    #pprint.pprint(freqs)
 
     frequent_items = dict(map_with_function(filter_rare_items, freqs))
 
     indeces=dict(map_indeces_to_poems(poem_lists, frequent_items))
 
-    print('Average waiting times')
-    pprint.pprint(avg_dists_across_poems(indeces))
+    #print('Average waiting times')
+    #pprint.pprint(avg_dists_across_poems(indeces))
