@@ -1,6 +1,6 @@
 # Kalevala analysis
 
-This project analyses Kalevala poems. Poems are retrieved from [this site](http://runeberg.org/kalevala/) and files are assumed to be saved in separate files. Name of the files should correspond to the title in the web page.
+This project analyses Kalevala poems. Poems are retrieved from [this site](http://runeberg.org/kalevala/) and files are assumed to be saved in separate files. Name of the files should correspond to the title in the web page. Files/Poems are assumed to be located under data directory.
 
 There are three files related to analysis: kalevala_analysis.py, kalevala_analysis_test.py and kalevala_analysis.pynb. 
 
