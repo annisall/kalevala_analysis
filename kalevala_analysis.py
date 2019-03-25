@@ -112,5 +112,5 @@ if __name__ == '__main__':
 
     indeces=dict(map_indeces_to_poems(poem_lists, frequent_items))
 
-    print('Average waiting times')
-    pprint.pprint(avg_dists_across_poems(indeces))
+    #print('Average waiting times')
+    #pprint.pprint(avg_dists_across_poems(indeces))

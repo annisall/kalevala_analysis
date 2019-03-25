@@ -1,7 +1,11 @@
 # Kalevala analysis
 
-## kalevala_analysis.py file 
-contains following functions:
+This project analyses Kalevala poems. Poems are retrieved from [this site](http://runeberg.org/kalevala/) and files are assumed to be saved in separate files. Name of the files should correspond to the title in the web page.
+
+There are three files related to analysis: kalevala_analysis.py, kalevala_analysis_test.py and kalevala_analysis.pynb. 
+
+## kalevala_analysis.py 
+Contains following functions:
 * Loading poems under data-directory
 * Cleaning poems: removing newlines, starting and trailing spaces, punctuations
 * Statistics for poems:
@@ -12,5 +16,8 @@ If results need to be printed, uncomment print calls at the end of the file
 kalevala_analysis_test.py contains unit tests for the functions in kalevala_analysis.py file.
 
 ## kalevala_analysis.pynb
-IN PROGRESS
+Contains following functions:
+* Visulization of poem stats
+* Finding keywords for each poem. Keyword is defined as word that appears in a poem, but is rare in other poems.
+* Calculating and visualization of poem similarity
 
