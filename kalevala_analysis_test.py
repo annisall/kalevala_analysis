@@ -29,7 +29,7 @@ class kalevalaTest(unittest.TestCase):
             ['This', 'is', 'number', 'one', 'This', 'is', 'number', 'two','This', 'is', 'number', 'three'])
 
     def test_count_metrics(self):
-        self.assertEqual(kaleva.count_metrics([('first poem', ['This is the end', 'hold your breath', 'and count to ten']), 
+        self.assertEqual(kaleva.calculate_metrics([('first poem', ['This is the end', 'hold your breath', 'and count to ten']), 
             ('second poem', ['This is the way the world ends', 'This is the way the world ends', 'This is the way the world ends', 'Not with a bang but a whimper'])]),
              [('first poem', 3, 11), ('second poem', 4, 28)])
 
@@ -39,8 +39,7 @@ class kalevalaTest(unittest.TestCase):
              [('first poem', Counter({'the': 2,'this':1, 'is': 1, 'way': 1, 'world':1, 'ends': 1})),
               ('second poem', Counter({'a': 2, 'not': 1, 'with': 1, 'bang': 1, 'but': 1, 'whimper': 1}))])
 
-    def test_filter_rare_items(self):
-        
+
 
 
 if __name__ == '__main__':
